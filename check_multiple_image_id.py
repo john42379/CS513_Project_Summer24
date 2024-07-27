@@ -2,7 +2,7 @@ import pandas as pd
 from io import StringIO
 
 
-file_path = 'C:\\Users\Anthony\\Documents\\UIUC\\CS 513\\CS513_Project_Summer24\\MenuPage_Cleaned.csv'
+file_path = 'C:\\Users\Anthony\\Documents\\UIUC\\CS 513\\CS513_Project_Summer24\\MenuPage.csv'
 # Load data into DataFrame
 df = pd.read_csv(file_path)
 
@@ -13,4 +13,4 @@ grouped = df.groupby(['image_id', 'menu_id', 'page_number']).size().reset_index(
 filtered = grouped[grouped['count'] > 1]
 
 print("Groups where image_id, menu_id, and page_number are the same and occur more than once:")
-print(filtered)
+print(len(filtered))
